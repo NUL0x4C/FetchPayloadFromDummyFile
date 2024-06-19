@@ -1,13 +1,13 @@
+// @NUL0x4C | @mrd0x : MalDevAcademy
+
 #include <Windows.h>
 #include <stdio.h>
 
-
-
 BOOL ReadFileFromDiskW(IN LPCWSTR szFileName, OUT PBYTE* ppFileBuffer, OUT PDWORD pdwFileSize) {
 
-	HANDLE		hFile					= INVALID_HANDLE_VALUE;
-	DWORD		dwFileSize				= NULL,
-				dwNumberOfBytesRead		= NULL;
+	HANDLE		hFile				= INVALID_HANDLE_VALUE;
+	DWORD		dwFileSize			= NULL,
+			dwNumberOfBytesRead		= NULL;
 	PBYTE		pBaseAddress			= NULL;
 
 	if (!szFileName || !pdwFileSize || !ppFileBuffer)
@@ -46,7 +46,7 @@ _END_OF_FUNC:
 
 
 
-#define		DUMMY_FILE		L"C:\\Users\\NULL0x00\\Desktop\\dummygif.gif"
+#define		DUMMY_FILE	L"C:\\Users\\NULL0x00\\Desktop\\dummygif.gif"
 
 //\
 #define		PAYLOAD_FILE	L"C:\\Users\\NULL0x00\\Documents\\Payloads\\demon.bin"
@@ -57,10 +57,10 @@ _END_OF_FUNC:
 int main() {
 
 	PBYTE		uDummyFileBuffer	= NULL,
-				uPayloadFileBuffer	= NULL;
+			uPayloadFileBuffer	= NULL;
 
 	DWORD		dwDummyFileSize		= 0x00,
-				dwPayloadFileSize	= 0x00;
+			dwPayloadFileSize	= 0x00;
 
 	PDWORD		pdwOffsetsArray		= NULL;
 
